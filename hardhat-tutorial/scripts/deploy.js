@@ -14,7 +14,7 @@ async function main() {
   // Wait for it to finish deploying
   await deployedWhitelistContract.deployed();
 
-  // print the address of the deployed contractn
+  // print the address of the deployed contract
   console.log(
     "Whitelist Contract Address:",
     deployedWhitelistContract.address

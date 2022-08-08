@@ -38,8 +38,8 @@ export default function Home() {
     // If user is not connected to the Rinkeby network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 5) {
-      window.alert("Change the network to Goerli");
-      throw new Error("Change network to Goerli");
+      window.alert("Change the network to goerli");
+      throw new Error("Change network to georil");
     }
 
     if (needSigner) {
@@ -58,13 +58,13 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       // Create a new instance of the Contract with a Signer, which allows
       // update methods
-      const whitelistContract = new Contract(
+      const WhitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
         abi,
         signer
       );
       // call the addAddressToWhitelist from the contract
-      const tx = await whitelistContract.addAddressToWhitelist();
+      const tx = await WhitelistContract.addAddressToWhitelist();
       setLoading(true);
       // wait for the transaction to get mined
       await tx.wait();
@@ -111,6 +111,7 @@ export default function Home() {
       const signer = await getProviderOrSigner(true);
       const WhitelistContract = new Contract(
         WHITELIST_CONTRACT_ADDRESS,
+        
         abi,
         signer
       );
